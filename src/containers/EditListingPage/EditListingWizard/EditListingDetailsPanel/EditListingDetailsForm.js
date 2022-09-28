@@ -89,53 +89,53 @@ const EditListingDetailsFormComponent = props => (
       const submitInProgress = updateInProgress;
       const submitDisabled = invalid || disabled || submitInProgress;
 
-      const categoryConfig = findConfigForSelectFilter('category', filterConfig);
-      const categorySchemaType = categoryConfig.schemaType;
-      const categories = categoryConfig.options ? categoryConfig.options : [];
-      const categoryLabel = intl.formatMessage({
-        id: 'EditListingDetailsForm.categoryLabel',
+      const buildGroupConfig = findConfigForSelectFilter('buildGroup', filterConfig);
+      const buildGroupSchemaType = buildGroupConfig.schemaType;
+      const buildGroups = buildGroupConfig.options ? buildGroupConfig.options : [];
+      const buildGroupLabel = intl.formatMessage({
+        id: 'EditListingDetailsForm.buildGroupLabel',
       });
-      const categoryPlaceholder = intl.formatMessage({
-        id: 'EditListingDetailsForm.categoryPlaceholder',
+      const buildGroupPlaceholder = intl.formatMessage({
+        id: 'EditListingDetailsForm.buildGroupPlaceholder',
       });
 
-      const categoryRequired = required(
+      const buildGroupRequired = required(
         intl.formatMessage({
-          id: 'EditListingDetailsForm.categoryRequired',
+          id: 'EditListingDetailsForm.buildGroupRequired',
         })
       );
 
-      const sizeConfig = findConfigForSelectFilter('size', filterConfig);
-      const sizeSchemaType = sizeConfig ? sizeConfig.schemaType : null;
-      const sizes = sizeConfig && sizeConfig.options ? sizeConfig.options : [];
-      const sizeLabel = intl.formatMessage({
-        id: 'EditListingDetailsForm.sizeLabel',
-      });
-      const sizePlaceholder = intl.formatMessage({
-        id: 'EditListingDetailsForm.sizePlaceholder',
-      });
+      // const sizeConfig = findConfigForSelectFilter('size', filterConfig);
+      // const sizeSchemaType = sizeConfig ? sizeConfig.schemaType : null;
+      // const sizes = sizeConfig && sizeConfig.options ? sizeConfig.options : [];
+      // const sizeLabel = intl.formatMessage({
+      //   id: 'EditListingDetailsForm.sizeLabel',
+      // });
+      // const sizePlaceholder = intl.formatMessage({
+      //   id: 'EditListingDetailsForm.sizePlaceholder',
+      // });
 
-      const sizeRequired = required(
-        intl.formatMessage({
-          id: 'EditListingDetailsForm.sizeRequired',
-        })
-      );
+      // const sizeRequired = required(
+      //   intl.formatMessage({
+      //     id: 'EditListingDetailsForm.sizeRequired',
+      //   })
+      // );
 
-      const brandConfig = findConfigForSelectFilter('brand', filterConfig);
-      const brandSchemaType = brandConfig ? brandConfig.schemaType : null;
-      const brands = brandConfig && brandConfig.options ? brandConfig.options : [];
-      const brandLabel = intl.formatMessage({
-        id: 'EditListingDetailsForm.brandLabel',
-      });
-      const brandPlaceholder = intl.formatMessage({
-        id: 'EditListingDetailsForm.brandPlaceholder',
-      });
+      // const brandConfig = findConfigForSelectFilter('brand', filterConfig);
+      // const brandSchemaType = brandConfig ? brandConfig.schemaType : null;
+      // const brands = brandConfig && brandConfig.options ? brandConfig.options : [];
+      // const brandLabel = intl.formatMessage({
+      //   id: 'EditListingDetailsForm.brandLabel',
+      // });
+      // const brandPlaceholder = intl.formatMessage({
+      //   id: 'EditListingDetailsForm.brandPlaceholder',
+      // });
 
-      const brandRequired = required(
-        intl.formatMessage({
-          id: 'EditListingDetailsForm.brandRequired',
-        })
-      );
+      // const brandRequired = required(
+      //   intl.formatMessage({
+      //     id: 'EditListingDetailsForm.brandRequired',
+      //   })
+      // );
 
       return (
         <Form className={classes} onSubmit={handleSubmit}>
@@ -162,17 +162,35 @@ const EditListingDetailsFormComponent = props => (
             placeholder={descriptionPlaceholderMessage}
             validate={composeValidators(required(descriptionRequiredMessage))}
           />
+          <FieldTextInput
+            id="sku"
+            name="sku"
+            className={css.description}
+            type="text"
+            label="SKU"
+            placeholder="SKU"
+            validate={composeValidators(required("SKU required"))}
+          />
+          <FieldTextInput
+            id="oemPartNumber"
+            name="oemPartNumber"
+            className={css.description}
+            type="text"
+            label="OEM part number"
+            placeholder="OEM part number"
+            validate={composeValidators(required("OEM part numnber required"))}
+          />
           <CustomFieldEnum
-            id="category"
-            name="category"
-            options={categories}
-            label={categoryLabel}
-            placeholder={categoryPlaceholder}
-            validate={categoryRequired}
-            schemaType={categorySchemaType}
+            id="buildGroup"
+            name="buildGroup"
+            options={buildGroups}
+            label={buildGroupLabel}
+            placeholder={buildGroupPlaceholder}
+            validate={buildGroupRequired}
+            schemaType={buildGroupSchemaType}
           />
 
-          <CustomFieldEnum
+          {/* <CustomFieldEnum
             id="size"
             name="size"
             options={sizes}
@@ -180,9 +198,9 @@ const EditListingDetailsFormComponent = props => (
             placeholder={sizePlaceholder}
             validate={sizeRequired}
             schemaType={sizeSchemaType}
-          />
+          /> */}
 
-          <CustomFieldEnum
+          {/* <CustomFieldEnum
             id="brand"
             name="brand"
             options={brands}
@@ -190,7 +208,7 @@ const EditListingDetailsFormComponent = props => (
             placeholder={brandPlaceholder}
             validate={brandRequired}
             schemaType={brandSchemaType}
-          />
+          /> */}
 
           <Button
             className={css.submitButton}

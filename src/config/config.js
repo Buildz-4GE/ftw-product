@@ -135,7 +135,7 @@ const streetAddress = 'Erottajankatu 19 B';
 const canonicalRootURL = process.env.REACT_APP_CANONICAL_ROOT_URL;
 
 // Site title is needed in meta tags (bots and social media sharing reads those)
-const siteTitle = 'Sneakertime';
+const siteTitle = 'Buildz.pro';
 
 // Twitter handle is needed in meta tags (twitter:site). Start it with '@' character
 const siteTwitterHandle = '@sharetribe';
@@ -162,7 +162,7 @@ const maps = {
   // Choose map provider: 'MAPBOX', 'GOOGLE_MAPS'
   // Note: you need to have REACT_APP_MAPBOX_ACCESS_TOKEN or REACT_APP_GOOGLE_MAPS_API_KEY
   //       set depending on which one you use in this config.
-  mapProvider: 'MAPBOX',
+  mapProvider: 'GOOGLE_MAPS',
 
   // The location search input can be configured to show default
   // searches when the user focuses on the input and hasn't yet typed
