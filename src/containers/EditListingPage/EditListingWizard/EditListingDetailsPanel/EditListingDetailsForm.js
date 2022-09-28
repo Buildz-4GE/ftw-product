@@ -169,7 +169,6 @@ const EditListingDetailsFormComponent = props => (
             type="text"
             label="SKU"
             placeholder="SKU"
-            validate={composeValidators(required("SKU required"))}
           />
           <FieldTextInput
             id="oemPartNumber"
@@ -178,7 +177,6 @@ const EditListingDetailsFormComponent = props => (
             type="text"
             label="OEM part number"
             placeholder="OEM part number"
-            validate={composeValidators(required("OEM part numnber required"))}
           />
           <CustomFieldEnum
             id="buildGroup"
