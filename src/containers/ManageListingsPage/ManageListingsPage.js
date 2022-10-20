@@ -16,6 +16,7 @@ import {
   LayoutWrapperMain,
   LayoutWrapperFooter,
   Footer,
+  NamedLink
 } from '../../components';
 import TopbarContainer from '../../containers/TopbarContainer/TopbarContainer';
 
@@ -74,9 +75,16 @@ export class ManageListingsPageComponent extends Component {
 
     const noResults =
       listingsAreLoaded && pagination.totalItems === 0 ? (
-        <h1 className={css.title}>
-          <FormattedMessage id="ManageListingsPage.noResults" />
-        </h1>
+        <div>
+          <h1 className={css.title}>
+            <FormattedMessage id="ManageListingsPage.noResults" />
+          </h1>
+          <NamedLink className={css.title} name="NewListingPage">
+            <span className={css.createListing}>
+              <FormattedMessage id="TopbarDesktop.createListing" />
+            </span>
+          </NamedLink>
+        </div>
       ) : null;
 
     const heading =
