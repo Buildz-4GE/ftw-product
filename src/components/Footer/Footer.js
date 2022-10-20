@@ -68,7 +68,7 @@ const Footer = props => {
               <NamedLink name="LandingPage" className={css.logoLink}>
                 <Logo format="desktop" className={css.logo} />
               </NamedLink>
-              <div className={css.organizationInfo}>
+              {/* <div className={css.organizationInfo}>
                 <p className={css.organizationDescription}>
                   <FormattedMessage id="Footer.organizationDescription" />
                 </p>
@@ -77,7 +77,7 @@ const Footer = props => {
                     <FormattedMessage id="Footer.copyright" />
                   </NamedLink>
                 </p>
-              </div>
+              </div> */}
             </div>
             <div className={css.infoLinks}>
               <ul className={css.list}>
@@ -108,7 +108,7 @@ const Footer = props => {
                 </li>
               </ul>
             </div>
-            <div className={css.searches}>
+            {/* <div className={css.searches}>
               <ul className={css.list}>
                 <li className={css.listItem}>
                   <NamedLink
@@ -225,7 +225,7 @@ const Footer = props => {
                   </NamedLink>
                 </li>
               </ul>
-            </div>
+            </div> */}
             <div className={css.extraLinks}>
               <div className={css.someLinks}>{socialMediaLinks}</div>
               <div className={css.legalMatters}>
